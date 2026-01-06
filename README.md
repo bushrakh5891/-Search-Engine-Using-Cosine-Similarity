@@ -1,101 +1,97 @@
-Search Engine Using Cosine Similarity
 
-A Python-based search engine that ranks documents by relevance using Cosine Similarity. Queries and documents are converted into TF-IDF vectors, and similarity scores determine the most relevant results, demonstrating how NLP and vector-based methods enable effective document retrieval.
+# Search Engine Using Cosine Similarity
 
-Project Members
-Name              	Roll Number
-BUSHRA KHALID      22SP-060-CS
-LAYBA ASIF         22SP-060-CS
+A Python-based search engine that ranks documents by **relevance** using **Cosine Similarity**. Queries and documents are converted into **TF-IDF vectors**, and similarity scores determine the most relevant results, demonstrating how **NLP** and vector-based methods enable effective document retrieval.
 
+---
 
-(Replace with your actual team members)
+## Project Members
 
-Project Description
+| Name          | Roll Number |
+| ------------- | ----------- |
+| Bushra Khalid | 22SP-060-CS |
+| Layba Asif    | 22SP-060-CS |
 
-This system implements a “Retrieve-and-Compare” architecture using Python and open-source libraries. It fetches content from web URLs, preprocesses it, converts it into TF-IDF vectors, and ranks documents by similarity to user queries using Cosine Similarity.
+---
 
-Key Features
+## Project Description
 
-Document Fetching: Fetch text from blog posts, articles, or any webpage using URLs.
+This system implements a **“Retrieve-and-Compare” architecture** using Python and open-source libraries. It fetches content from web URLs, preprocesses it, converts it into **TF-IDF vectors**, and ranks documents by similarity to user queries using **Cosine Similarity**.
 
-Preprocessing: Converts text to lowercase, removes punctuation, tokenizes, removes stopwords, and keeps only meaningful words.
+---
 
-Vectorization: Transforms text into TF-IDF vectors for numerical representation.
+## Key Features
 
-Similarity Calculation: Computes Cosine Similarity between query and documents to rank relevance.
+* **Document Fetching:** Fetch text from blog posts, articles, or any webpage using URLs.
+* **Preprocessing:** Converts text to lowercase, removes punctuation, tokenizes, removes stopwords, and keeps only meaningful words.
+* **Vectorization:** Transforms text into **TF-IDF vectors** for numerical representation.
+* **Similarity Calculation:** Computes **Cosine Similarity** between query and documents to rank relevance.
+* **Interactive Web UI:** Streamlit-based interface for easy comparison of documents.
+* **Similarity Interpretation:** Provides intuitive similarity labels:
 
-Interactive Web UI: Streamlit-based interface for easy comparison of documents.
+  * 🟢 Very Similar (≥ 0.7)
+  * 🟡 Moderately Similar (≥ 0.4)
+  * 🟠 Somewhat Similar (≥ 0.2)
+  * 🔴 Not Similar (< 0.2)
 
-Similarity Interpretation: Provides intuitive similarity labels:
+---
 
-🟢 Very Similar
+## Prerequisites
 
-🟡 Moderately Similar
+* Python 3.8+
+* Required libraries (install via `pip install -r requirements.txt`):
 
-🟠 Somewhat Similar
+  * `streamlit`
+  * `requests`
+  * `beautifulsoup4`
+  * `nltk`
+  * `scikit-learn`
 
-🔴 Not Similar
+---
 
-Prerequisites
-
-Python 3.8+
-
-Required libraries (install via pip install -r requirements.txt):
-
-streamlit
-
-requests
-
-beautifulsoup4
-
-nltk
-
-scikit-learn
-
-Demo / Reproducibility Steps
+## Demo / Reproducibility Steps
 
 Follow these steps to run the project and verify its functionality:
 
-Open a terminal in the project directory.
+1. **Open a terminal** in the project directory.
 
-Run the application:
+2. **Run the application:**
 
+```bash
 streamlit run app.py
+```
 
+3. **Enter URLs:**
 
-Enter URLs:
+* Enter the first and second document/blog URLs in the input fields.
+* Click **“Calculate Similarity”**.
 
-Enter the first and second document/blog URLs in the input fields.
+4. **View Results:**
 
-Click “Calculate Similarity”.
+* The similarity score between the two documents will be displayed.
+* The app provides a visual interpretation:
 
-View Results:
+  * 🟢 Very Similar (≥ 0.7)
+  * 🟡 Moderately Similar (≥ 0.4)
+  * 🟠 Somewhat Similar (≥ 0.2)
+  * 🔴 Not Similar (< 0.2)
 
-The similarity score between the two documents will be displayed.
+5. **Example Output:**
 
-The app provides a visual interpretation:
-
-Very Similar (≥ 0.7)
-
-Moderately Similar (≥ 0.4)
-
-Somewhat Similar (≥ 0.2)
-
-Not Similar (< 0.2)
-
-Example:
-
+```
 Similarity Score: 0.7823
 🟢 Very Similar
+```
 
-How it Works
+---
 
-Text Extraction: Uses requests and BeautifulSoup to fetch web page content.
+## How it Works
 
-Cleaning & Preprocessing: Lowercase, punctuation removal, tokenization, stopword removal.
+1. **Text Extraction:** Uses `requests` and `BeautifulSoup` to fetch web page content.
+2. **Cleaning & Preprocessing:** Lowercase, punctuation removal, tokenization, stopword removal.
+3. **TF-IDF Vectorization:** Converts preprocessed text into numerical vectors.
+4. **Cosine Similarity:** Calculates similarity score between vectors to rank relevance.
+5. **Interactive Display:** Shows results on a Streamlit web interface.
 
-TF-IDF Vectorization: Converts preprocessed text into vectors.
+---
 
-Cosine Similarity: Calculates similarity score between vectors to rank relevance.
-
-Interactive Display: Shows results on a Streamlit web interface.
